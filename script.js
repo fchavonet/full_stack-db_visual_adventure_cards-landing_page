@@ -37,11 +37,13 @@ function setLanguage(language) {
     document.title = text.title;
     document.querySelector('meta[name="description"]').content = text.description;
 
-    const heading2 = document.querySelector('[data-i18n="heading2"]');
+    document.querySelectorAll("[data-i18n]").forEach(element => {
+        const translation = text[element.dataset.i18n];
 
-    if (heading2) {
-        heading2.textContent = text.heading2;
-    }
+        if (translation !== undefined) {
+            element.textContent = translation;
+        }
+    });
 
     if (language === "fr") {
         languageToggle.checked = true;
@@ -61,3 +63,41 @@ languageToggle.addEventListener("change", () => {
 });
 
 loadTranslations().catch(console.error);
+
+
+/**********************
+* OPEN MODAL BEHAVIOR *
+**********************/
+
+async function openMarkdownModal(name) {
+    const modal = document.getElementById(name + "-modal");
+    const content = document.getElementById(name + "-content");
+    const language = document.documentElement.lang;
+    const errorMessage = "Failed to load " + name + " content.";
+
+    content.textContent = "Loading...";
+    modal.showModal();
+
+    try {
+        const response = await fetch("./docs/" + name + "-" + language + ".md");
+
+        if (!response.ok) {
+            throw new Error(errorMessage);
+        }
+
+        const markdown = await response.text();
+
+        content.innerHTML = DOMPurify.sanitize(marked.parse(markdown));
+    } catch (error) {
+        content.textContent = errorMessage;
+        console.error(error);
+    }
+}
+
+
+/**************************
+* YEAR COPYRIGHT BEHAVIOR *
+**************************/
+
+const year = document.getElementById("year");
+year.textContent = new Date().getFullYear();

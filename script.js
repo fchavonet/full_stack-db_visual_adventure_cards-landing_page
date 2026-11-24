@@ -88,6 +88,13 @@ async function openMarkdownModal(name) {
         const markdown = await response.text();
 
         content.innerHTML = DOMPurify.sanitize(marked.parse(markdown));
+
+        content.querySelectorAll("a[href]").forEach(link => {
+            if (link.protocol === "https:" || link.protocol === "http:") {
+                link.target = "_blank";
+                link.rel = "noopener noreferrer";
+            }
+        });
     } catch (error) {
         content.textContent = errorMessage;
         console.error(error);

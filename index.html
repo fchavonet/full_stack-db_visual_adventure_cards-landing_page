@@ -78,19 +78,25 @@
 
     <!-- PRIVACY MODAL -->
     <dialog id="privacy-modal" class="modal">
-        <div class="modal-box">
-            <!-- Close button -->
-            <form method="dialog">
-                <button type="submit" class="btn btn-sm btn-circle absolute right-2 top-2" aria-label="Close">
-                    <i class="bi bi-x-lg text-[#ff8d28]"></i>
-                </button>
-            </form>
+        <div class="modal-box w-[calc(100%-2rem)] max-h-[calc(100dvh-2rem)] m-4">
+            <!-- Header -->
+            <header class="flex justify-between items-center gap-4">
+                <h1 id="privacy-title" class="text-lg font-bold" data-i18n="privacy">
+                    Privacy
+                </h1>
 
-            <!-- PRIVACY CONTENT -->
-            <div id="privacy-content" class="[&_h1]:font-bold"></div>
+                <form method="dialog" class="shrink-0">
+                    <button type="submit" class="btn btn-sm btn-circle" aria-label="Close">
+                        <i class="bi bi-x-lg text-[#ff8d28]" aria-hidden="true"></i>
+                    </button>
+                </form>
+            </header>
+
+            <!-- Content -->
+            <div id="privacy-content" class="space-y-2 [&_h2]:font-bold [&_h2]:mt-4 [&_a]:text-[#ff8d28] [&_a]:decoration-1 [&_a:hover]:underline [&_a]:underline-offset-4"></div>
         </div>
 
-        <!-- Close when clicking outside -->
+        <!-- Backdrop -->
         <form method="dialog" class="modal-backdrop backdrop-blur-xs">
             <button type="submit" aria-label="Close">Close</button>
         </form>
@@ -98,19 +104,25 @@
 
     <!-- SUPPORT MODAL -->
     <dialog id="support-modal" class="modal">
-        <div class="modal-box">
-            <!-- Close button -->
-            <form method="dialog">
-                <button type="submit" class="btn btn-sm btn-circle absolute right-2 top-2" aria-label="Close">
-                    <i class="bi bi-x-lg text-[#ff8d28]"></i>
-                </button>
-            </form>
+        <div class="modal-box w-[calc(100%-2rem)] max-h-[calc(100dvh-2rem)] m-4">
+            <!-- Header -->
+            <header class="flex justify-between items-center gap-4">
+                <h1 id="support-title" class="text-lg font-bold" data-i18n="support">
+                    Support
+                </h1>
 
-            <!-- SUPPORT CONTENT -->
-            <div id="support-content" class="[&_h1]:font-bold"></div>
+                <form method="dialog" class="shrink-0">
+                    <button type="submit" class="btn btn-sm btn-circle" aria-label="Close">
+                        <i class="bi bi-x-lg text-[#ff8d28]" aria-hidden="true"></i>
+                    </button>
+                </form>
+            </header>
+
+            <!-- Content -->
+            <div id="support-content" class="space-y-2 [&_h2]:font-bold [&_h2]:mt-4 [&_a]:text-[#ff8d28] [&_a]:decoration-1 [&_a:hover]:underline [&_a]:underline-offset-4"></div>
         </div>
 
-        <!-- Close when clicking outside -->
+        <!-- Backdrop -->
         <form method="dialog" class="modal-backdrop backdrop-blur-xs">
             <button type="submit" aria-label="Close">Close</button>
         </form>

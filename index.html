@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>DBVAC - Manage your Dragon Ball Visual Adventure card collection</title>
-    <meta name="description" content="Track the Dragon Ball Visual Adventure cards you own, find missing cards and follow your collection's progress, right from your iPhone.">
-
+    <meta name="description" content="Manage your Dragon Ball Visual Adventure card collection, see which cards you're missing and track your progress, right from your iPhone.">
     <!-- FAVICON -->
     <link rel="icon" href="./assets/favicon.ico" type="image/x-icon">
 
@@ -23,13 +22,33 @@
     <script src="./script.js" defer></script>
 </head>
 
-<body>
-    <header>
+<body class="max-w-4xl min-h-svh mx-auto p-4 flex flex-col antialiased">
+    <header class="pb-4 flex flex-row justify-between items-center">
+        <!-- -->
+        <a class="flex flex-row justify-center items-center gap-2" href="#">
+            <img class="w-10 h-10" src="./assets/images/logo-dbvac.webp" alt="DBVAC">
+            <span class="font-black text-2xl tracking-tighter">DBVAC</span>
+        </a>
 
+        <!-- -->
+        <div class="flex flex-row justify-center items-center gap-2">
+            <label class="btn btn-circle swap">
+                <input id="language-toggle" type="checkbox" aria-label="Switch language">
+                <span class="swap-on text-[#ff8d28]" lang="en">EN</span>
+                <span class="swap-off text-[#ff8d28]" lang="fr">FR</span>
+            </label>
+
+            <label class="btn btn-circle swap swap-rotate">
+                <input id="theme-toggle" class="theme-controller" type="checkbox" value="black" aria-label="Switch theme">
+                <i class="swap-on bi bi-brightness-high-fill text-[#ff8d28]"></i>
+                <i class="swap-off bi bi-moon-stars-fill text-[#ff8d28]"></i>
+            </label>
+        </div>
     </header>
 
-    <main>
-
+    <main class="flex flex-1 flex-col justify-center items-center">
+        <h1 class="">Dragon Ball Visual Adventure Cards</h1>
+        <h2 class="" data-i18n="heading2">Manage your card collection on your iPhone.</h2>
     </main>
 </body>
 

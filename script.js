@@ -24,6 +24,12 @@ async function loadTranslations() {
     }
 
     languageToggle.disabled = false;
+
+    const modalName = window.location.hash.slice(1);
+
+    if (modalName === "privacy" || modalName === "support") {
+        await openMarkdownModal(modalName);
+    }
 }
 
 function setLanguage(language) {
@@ -52,6 +58,8 @@ function setLanguage(language) {
         languageToggle.checked = false;
         languageToggle.setAttribute("aria-label", "Switch language");
     }
+
+    updateAppStoreLogo();
 }
 
 languageToggle.addEventListener("change", () => {
@@ -63,6 +71,32 @@ languageToggle.addEventListener("change", () => {
 });
 
 loadTranslations().catch(console.error);
+
+
+/************************
+* THEME TOGGLE BEHAVIOR *
+************************/
+
+function updateAppStoreLogo() {
+    const appStoreLogo = document.getElementById("app-store-logo");
+    const language = document.documentElement.lang;
+
+    let theme = "light";
+
+    if (document.getElementById("theme-toggle").checked) {
+        theme = "dark";
+    }
+
+    appStoreLogo.src = "./assets/images/logo-app_store-" + language + "-" + theme + ".svg";
+
+    if (language === "fr") {
+        appStoreLogo.alt = "Télécharger dans l’App Store";
+    } else {
+        appStoreLogo.alt = "Download on the App Store";
+    }
+}
+
+document.getElementById("theme-toggle").addEventListener("change", updateAppStoreLogo);
 
 
 /**********************

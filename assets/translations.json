@@ -2,7 +2,8 @@
     "en": {
         "title": "DBVAC - Manage your Dragon Ball Visual Adventure card collection",
         "description": "Manage your Dragon Ball Visual Adventure card collection, see which cards you're missing and track your progress, right from your iPhone.",
-        "heading2": "Manage your card collection on your iPhone.",
+        "heading2": "Manage your card collection right from your iPhone.",
+        "tagline": "See which cards you're missing and track your progress...",
         "privacy": "Privacy",
         "support": "Support",
         "copyright": "Unofficial application, not affiliated with Bandai."
@@ -10,7 +11,8 @@
     "fr": {
         "title": "DBVAC - Gérez votre collection de cartes Dragon Ball Visual Adventure",
         "description": "Gérez votre collection de cartes Dragon Ball Visual Adventure, retrouvez celles qui vous manquent et suivez votre progression, directement depuis votre iPhone.",
-        "heading2": "Gérez votre collection de cartes depuis votre iPhone.",
+        "heading2": "Gérez votre collection de cartes directement depuis votre iPhone.",
+        "tagline": "Retrouvez les cartes qui vous manquent et suivez votre progression...",
         "privacy": "Confidentialité",
         "support": "Assistance",
         "copyright": "Application non officielle, sans lien avec Bandai."

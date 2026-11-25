@@ -54,7 +54,7 @@ Depending on applicable law, you may request access to, correction or deletion o
 
 You can lodge a complaint with the relevant data protection authority, including the [CNIL](https://www.cnil.fr/) in France.
 
-## Our email correspondances
+## Our email correspondance
 
 When you email [dbvac.app@gmail.com](mailto:dbvac.app@gmail.com), [Fabien Chavonet](https://fchavonet.dev) uses your email address, any associated name and the information you provide to handle your inquiry and reply to you. Please avoid including personal information unrelated to your inquiry.
 

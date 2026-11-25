@@ -50,14 +50,21 @@
     </header>
 
     <!-- MAIN -->
-    <main class="flex flex-1 flex-col justify-center items-center text-center">
-        <h1 class="">Dragon Ball Visual Adventure Cards</h1>
-        <h2 class="" data-i18n="heading2">Manage your card collection on your iPhone.</h2>
+    <main class="flex flex-1 flex-col justify-evenly items-center text-center">
+        <div class="flex flex-col justify-center items-center gap-4">
+            <h1 class="text-sm font-semibold tracking-wide text-[#ff8d28]">Dragon Ball Visual Adventure Cards</h1>
+            <h2 class="text-4xl font-bold" data-i18n="heading2">Manage your card collection on your iPhone.</h2>
+            <p class="text-[#6c6c70]" data-i18n="tagline">See which cards you're missing and track your progress...</p>
+        </div>
+
+        <a href="" target="_blank">
+            <img id="app-store-logo" class="min-h-12" src="./assets/images/logo-app_store-en-light.svg" alt="Download on the App Store">
+        </a>
     </main>
 
     <!-- FOOTER -->
     <footer class="flex flex-col md:flex-row justify-center md:justify-between items-center gap-4">
-        <div class="flex flex-row justify-center items-center gap-4">
+        <div class="flex flex-row justify-center items-center gap-4 text-[#6c6c70]">
             <button type="button" class="decoration-1 hover:underline underline-offset-4 cursor-pointer " onclick="openMarkdownModal('privacy')" data-i18n="privacy">
                 Privacy
             </button>
@@ -69,7 +76,7 @@
             </button>
         </div>
 
-        <div class="flex flex-col md:flex-row justify-center items-center text-center">
+        <div class="flex flex-col md:flex-row justify-center items-center text-center text-[#6c6c70]">
             <p>© <span id="year">20..</span> <a class="decoration-1 underline-offset-4 hover:underline" href="https://fchavonet.dev/" target="_blank">Fabien Chavonet</a></p>
             <span class="hidden md:block">&nbsp;-&nbsp;</span>
             <p data-i18n="copyright">Unofficial application, not affiliated with Bandai.</p>

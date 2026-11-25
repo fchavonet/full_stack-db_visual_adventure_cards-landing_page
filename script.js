@@ -54,12 +54,14 @@ function setLanguage(language) {
     if (language === "fr") {
         languageToggle.checked = true;
         languageToggle.setAttribute("aria-label", "Changer de langue");
+        themeToggle.setAttribute("aria-label", "Changer de thème");
     } else {
         languageToggle.checked = false;
         languageToggle.setAttribute("aria-label", "Switch language");
+        themeToggle.setAttribute("aria-label", "Switch theme");
     }
 
-    updateAppStoreLogo();
+    updateImages();
 }
 
 languageToggle.addEventListener("change", () => {
@@ -73,30 +75,42 @@ languageToggle.addEventListener("change", () => {
 loadTranslations().catch(console.error);
 
 
-/************************
-* THEME TOGGLE BEHAVIOR *
-************************/
+/*************************
+* IMAGES TOGGLE BEHAVIOR *
+*************************/
 
-function updateAppStoreLogo() {
+const themeToggle = document.getElementById("theme-toggle");
+
+function updateImages() {
+    const iphoneBezel = document.getElementById("iphone-bezel");
+    const iphoneScreenshot = document.getElementById("iphone-screenshot");
     const appStoreLogo = document.getElementById("app-store-logo");
     const language = document.documentElement.lang;
 
     let theme = "light";
+    let bezelColor = "black";
 
-    if (document.getElementById("theme-toggle").checked) {
+    if (themeToggle.checked) {
         theme = "dark";
+        bezelColor = "silver";
     }
 
+    iphoneBezel.src = "./assets/images/bezel-iphone_18_pro-" + bezelColor + ".png";
+    iphoneScreenshot.src = "./assets/images/screenshot-" + language + "-" + theme + ".webp";
     appStoreLogo.src = "./assets/images/logo-app_store-" + language + "-" + theme + ".svg";
 
     if (language === "fr") {
+        iphoneScreenshot.alt = "Aperçu de l’application DBVAC";
         appStoreLogo.alt = "Télécharger dans l’App Store";
     } else {
+        iphoneScreenshot.alt = "DBVAC app preview";
         appStoreLogo.alt = "Download on the App Store";
     }
 }
 
-document.getElementById("theme-toggle").addEventListener("change", updateAppStoreLogo);
+themeToggle.addEventListener("change", updateImages);
+
+updateImages();
 
 
 /**********************

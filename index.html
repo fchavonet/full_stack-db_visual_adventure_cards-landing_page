@@ -26,7 +26,7 @@
 
 <body class="max-w-4xl h-svh mx-auto p-4 flex flex-col antialiased transition-all">
     <!-- HEADER -->
-    <header class="mb-10 pb-4 flex flex-row justify-between items-center">
+    <header class="mb-10 flex flex-row justify-between items-center">
         <!-- -->
         <a class="flex flex-row justify-center items-center gap-2" href="#">
             <img class="w-10 h-10" src="./assets/images/logo-dbvac.webp" alt="DBVAC">
@@ -53,15 +53,29 @@
     <main class="min-h-0 flex flex-1 flex-col md:flex-row justify-evenly items-center gap-4 text-center md:text-left">
         <div class="contents md:order-1 md:min-w-0 md:flex md:flex-1 md:flex-col md:justify-center md:items-start md:gap-4">
             <h1 class="text-sm font-semibold tracking-wide text-[#ff8d28]">Dragon Ball Visual Adventure Cards</h1>
-            <h2 class="text-4xl font-bold" data-i18n="heading2">Manage your card collection on your iPhone.</h2>
-            <p class="text-sm text-[#6c6c70]" data-i18n="tagline">See which cards you're missing and track your progress...</p>
+            <h2 class="max-w-sm text-4xl font-bold" data-i18n="heading2">Manage your card collection on your iPhone.</h2>
+            <p class="mb-4 text-sm text-[#6c6c70]" data-i18n="tagline">See which cards you're missing and track your progress...</p>
 
-            <a class="order-3 relative w-fit mt-8 rounded-xl aura aura-md aura-rainbow" href="" target="_blank">
-                <img id="app-store-logo" class="min-h-14" src="./assets/images/logo-app_store-en-light.svg" alt="Download on the App Store">
-            </a>
+            <div class="order-3 mt-4 flex flex-col justify-center items-center gap-2">
+                <a class="relative w-fit rounded-xl aura aura-md aura-rainbow" href="" target="_blank">
+                    <img id="app-store-logo" class="min-h-14" src="./assets/images/logo-app_store-en-light.svg" alt="Download on the App Store">
+                </a>
+
+                <div id="app-store-rating" class="flex justify-center items-center gap-2 text-sm text-[#6c6c70]">
+                    <span class="flex gap-1 text-[#ff8d28]">
+                        <i class="bi bi-star"></i>
+                        <i class="bi bi-star"></i>
+                        <i class="bi bi-star"></i>
+                        <i class="bi bi-star"></i>
+                        <i class="bi bi-star"></i>
+                    </span>
+
+                    <span data-i18n="ratingsEmpty">No ratings yet</span>
+                </div>
+            </div>
         </div>
 
-        <div id="iphone-mockup" class="order-2 relative flex-1 min-w-0 min-h-0 w-full self-stretch drop-shadow-2xl drop-shadow-[#ff8d28]/10">
+        <div id="iphone-mockup" class="order-2 relative flex-1 min-w-0 min-h-0 w-full self-stretch drop-shadow-2xl">
             <img id="iphone-screenshot" class="absolute inset-0 w-full h-full object-contain md:object-right" src="./assets/images/screenshot-en-light.webp" alt="DBVAC app preview">
             <img id="iphone-bezel" class="absolute inset-0 w-full h-full object-contain md:object-right" src="./assets/images/bezel-iphone_18_pro-black.png" alt="">
         </div>

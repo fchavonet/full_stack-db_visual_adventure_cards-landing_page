@@ -47,7 +47,9 @@ function setLanguage(language) {
         const translation = text[element.dataset.i18n];
 
         if (translation !== undefined) {
-            element.textContent = translation;
+            element.innerHTML = DOMPurify.sanitize(translation, {
+                ADD_ATTR: ["target"]
+            });
         }
     });
 
